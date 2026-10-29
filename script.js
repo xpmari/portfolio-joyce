@@ -1,5 +1,5 @@
 /**
- * PORTFÓLIO UGC - JOYCE BARCEL
+ * PORTFÓLIO UGC - JOYCE BARCELOS
  * Interações, Animações e Comportamentos Mobile-First
  */
 
@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Accordion do FAQ
   initFaqAccordion();
 
-  // 4. Contador de Métricas com IntersectionObserver
-  initMetricsCounter();
-
-  // 5. Controle do Botão Flutuante do WhatsApp
+  // 4. Controle do Botão Flutuante do WhatsApp
   initFloatingCta();
+
+  // 5. Animação suave das barras de faixa etária
+  initAgeBarsAnimation();
 });
 
 /* ==========================================================================
@@ -87,63 +87,6 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   METRICS COUNTER ANIMATION
-   ========================================================================== */
-function initMetricsCounter() {
-  const metricCards = document.querySelectorAll('.metric-num');
-  let started = false;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !started) {
-        started = true;
-        animateCounters();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  const metricsSection = document.querySelector('.metrics-strip');
-  if (metricsSection) {
-    observer.observe(metricsSection);
-  }
-
-  function animateCounters() {
-    metricCards.forEach(counter => {
-      const targetStr = counter.getAttribute('data-target');
-      if (!targetStr) return;
-
-      const isDecimal = targetStr.includes('.');
-      const targetVal = parseFloat(targetStr);
-      const duration = 1500;
-      const startTime = performance.now();
-
-      function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Easing out cubic
-        const ease = 1 - Math.pow(1 - progress, 3);
-        const currentVal = ease * targetVal;
-
-        if (isDecimal) {
-          counter.textContent = currentVal.toFixed(1) + 'M+';
-        } else if (targetVal >= 90 && targetVal <= 100) {
-          counter.textContent = Math.round(currentVal) + '%';
-        } else {
-          counter.textContent = '+' + Math.round(currentVal);
-        }
-
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        }
-      }
-
-      requestAnimationFrame(update);
-    });
-  }
-}
-
-/* ==========================================================================
    FLOATING CTA SCROLL LISTENER
    ========================================================================== */
 function initFloatingCta() {
@@ -154,7 +97,7 @@ function initFloatingCta() {
 
   const handleScroll = () => {
     const heroBottom = heroCta.getBoundingClientRect().bottom;
-    
+
     // Mostra o botão flutuante apenas após passar do botão principal da Hero
     if (heroBottom < 0) {
       floatingCta.style.opacity = '1';
@@ -209,10 +152,79 @@ function closeVideoModal() {
   document.body.style.overflow = ''; // Restaura scroll
 }
 
-// Fechar modal ao pressionar ESC
+// Fechar modais ao pressionar ESC
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
-    closeVideoModal();
+  if (e.key === 'Escape') {
+    if (videoModal && videoModal.classList.contains('active')) {
+      closeVideoModal();
+    }
+    if (photoModal && photoModal.classList.contains('active')) {
+      closePhotoModal();
+    }
   }
 });
+
+/* ==========================================================================
+   PHOTO MODAL / LIGHTBOX FUNCTIONS (Globais para chamar via onclick)
+   ========================================================================== */
+const photoModal = document.getElementById('photoModal');
+const photoModalImg = document.getElementById('photoModalImg');
+const photoModalTitle = document.getElementById('photoModalTitle');
+const photoModalTag = document.getElementById('photoModalTag');
+const photoModalDesc = document.getElementById('photoModalDesc');
+const photoModalCta = document.getElementById('photoModalCta');
+
+function openPhotoModal(imgSrc, title, tag, desc) {
+  if (!photoModal || !photoModalImg) return;
+
+  photoModalImg.src = imgSrc;
+  if (photoModalTitle) photoModalTitle.textContent = title || 'Visualização da Foto';
+  if (photoModalTag) photoModalTag.textContent = tag || 'Fotografia UGC';
+  if (photoModalDesc) photoModalDesc.textContent = desc || '';
+
+  if (photoModalCta) {
+    const plainTitle = title ? title.replace(/&amp;/g, '&') : 'da galeria';
+    const encodedText = encodeURIComponent(`Olá, Joyce! Conheci seu portfólio UGC, adorei a foto/produção "${plainTitle}" e gostaria de conversar sobre uma possível parceria.`);
+    photoModalCta.href = `https://wa.me/5519998802981?text=${encodedText}`;
+  }
+
+  photoModal.classList.add('active');
+  photoModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; // Evita rolagem da página ao fundo
+}
+
+function closePhotoModal() {
+  if (!photoModal) return;
+
+  photoModal.classList.remove('active');
+  photoModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = ''; // Restaura rolagem normal
+}
+
+/* ==========================================================================
+   AGE DEMOGRAPHICS BARS ANIMATION
+   ========================================================================== */
+function initAgeBarsAnimation() {
+  const ageBars = document.querySelectorAll('.bar-fill');
+  if (!ageBars.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        ageBars.forEach(bar => {
+          const pct = bar.getAttribute('data-percent');
+          if (pct) {
+            bar.style.width = pct + '%';
+          }
+        });
+        obs.disconnect(); // Dispara apenas uma vez para efeito suave
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const container = document.querySelector('.age-bars-container');
+  if (container) {
+    observer.observe(container);
+  }
+}
 
