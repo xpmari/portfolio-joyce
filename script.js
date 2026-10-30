@@ -1,4 +1,4 @@
-/**
+﻿/**
  * PORTFÓLIO UGC - JOYCE BARCELOS
  * Interações, Animações e Comportamentos Mobile-First
  */
@@ -40,7 +40,8 @@ function initPortfolioFilters() {
 
       videoCards.forEach(card => {
         const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
+        const matches = filterValue === 'all' || category === filterValue || (category && category.split(' ').includes(filterValue));
+        if (matches) {
           card.classList.remove('hidden');
           // Pequena animação de fade-in
           card.style.animation = 'fadeIn 0.35s ease forwards';

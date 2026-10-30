@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -220,10 +220,11 @@
             <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
             <button class="filter-btn" data-filter="hair">Hair</button>
             <button class="filter-btn" data-filter="fitness">Fitness</button>
+            <button class="filter-btn" data-filter="asmr">ASMR</button>
           </div>
         </div>
 
-        <!-- Video Cards Grid (4 V&iacute;deos Oficiais) -->
+        <!-- Video Cards Grid (5 V&iacute;deos Oficiais) -->
         <div class="video-grid">
 
           <!-- Card 1 - Hair -->
@@ -290,6 +291,22 @@
             </div>
           </div>
 
+          <!-- Card 5 - ASMR (Penteado Sleek) -->
+          <div class="video-card video-card--phone" data-category="hair asmr">
+            <span class="video-badge">ASMR</span>
+            <div class="phone-mock">
+              <div class="phone-screen">
+                <video class="phone-video" src="assets/videos/asmr.mp4" poster="assets/videos/asmr-poster.jpg" playsinline preload="metadata" loop></video>
+                <button class="phone-play" aria-label="Reproduzir v&iacute;deo"><i class="fa-solid fa-play"></i></button>
+              </div>
+              <img class="phone-frame" src="assets/iphone-mockup.png" alt="" aria-hidden="true" />
+            </div>
+            <div class="video-info">
+              <h3>Penteado Sleek (ASMR)</h3>
+              <p>Rotina sensorial com sons n&iacute;tidos, textura do produto e finaliza&ccedil;&atilde;o com gel.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -309,21 +326,20 @@
         <!-- 4 Authentic Photo Cards Grid -->
         <div class="photo-gallery-grid">
 
-          <!-- Foto 1: Corrida & Fitness -->
-          <div class="photo-card" onclick="openPhotoModal('assets/joyce-corrida-fitness.jpg', 'Corrida &amp; Rotina Ativa', 'Fitness • Prova de Corrida', 'Registro autêntico em prova de corrida de rua oficial com dorsal e ritmo real. Transmite disciplina, energia e vitalidade sem filtros de academia posada. Ideal para vestuário esportivo, tênis de corrida, fones bluetooth, relógios esportivos, isotônicos e suplementos.')">
+          <!-- Foto 1: Lifestyle & Dia a Dia -->
+          <div class="photo-card" onclick="openPhotoModal('assets/foto-oculos.jpg', 'Lifestyle Aut&ecirc;ntico &amp; Dia a Dia', 'Lifestyle &bull; Dia a Dia', 'Registro espont&acirc;neo e aut&ecirc;ntico conectando com a rotina real e est&eacute;tica leve. Ideal para marcas de &oacute;culos de grau e de sol, acess&oacute;rios, moda casual e momentos do cotidiano.')">
             <div class="photo-card-inner">
-              <img src="assets/joyce-corrida-fitness.jpg" alt="Joyce Barcelos - Fitness e Corrida de Rua" loading="lazy" class="gallery-img" />
+              <img src="assets/foto-oculos.jpg" alt="Joyce Barcelos - Lifestyle Aut&ecirc;ntico e Dia a Dia" loading="lazy" class="gallery-img" />
               <div class="photo-card-overlay">
-                <span class="photo-badge fitness"><i class="fa-solid fa-person-running"></i> Fitness &amp; Corrida</span>
+                <span class="photo-badge lifestyle"><i class="fa-solid fa-glasses"></i> Lifestyle &amp; Dia a Dia</span>
                 <div class="photo-card-info">
-                  <h3>Corrida &amp; Rotina Ativa</h3>
-                  <p>Prática real de corrida transmitindo energia e autenticidade</p>
+                  <h3>Lifestyle &amp; Dia a Dia</h3>
+                  <p>Est&eacute;tica aut&ecirc;ntica e rotina real com conex&atilde;o espont&acirc;nea</p>
                   <span class="photo-zoom-hint"><i class="fa-solid fa-expand"></i> Ver em tela cheia</span>
                 </div>
               </div>
             </div>
           </div>
-
           <!-- Foto 2: Beleza & Glow Matinal -->
           <div class="photo-card" onclick="openPhotoModal('assets/joyce-denim-portrait.jpg', 'Retrato &amp; Glow Natural', 'Beleza • Glow &amp; Luz do Dia', 'Retrato luminoso na luz natural do dia, destacando maquiagem leve, acabamento viçoso de pele e sorriso espontâneo. Formato perfeito para campanhas de maquiagem fresh, protetor solar com cor, óculos de sol, brincos e moda jeans casual.')">
             <div class="photo-card-inner">
@@ -339,30 +355,29 @@
             </div>
           </div>
 
-          <!-- Foto 3: Hair & Estética Floral Romântica -->
-          <div class="photo-card" onclick="openPhotoModal('assets/joyce-pink-lifestyle.jpg', 'Hair Care &amp; Estética Romântica', 'Hair &amp; Estilo • Romântico', 'Composição delicada sob arco de cerejeiras em flor com vestido rosa vibrante. Realça o movimento e brilho sedoso dos cabelos, além de conectar com um lifestyle feminino, elegante e alegre. Excelente para cronograma capilar, perfumes, vestidos e calçados casuais.')">
+          <!-- Foto 3: Cuidados com o Cabelo & Mechas -->
+          <div class="photo-card" onclick="openPhotoModal('assets/foto-cabelo.jpg', 'Cuidados com o Cabelo &amp; Mechas', 'Hair Care &bull; Mechas &amp; Beleza', 'Destaque real para o brilho, sa&uacute;de dos fios e ilumina&ccedil;&atilde;o das mechas loiras. Formato perfeito para linhas de tratamento capilar, cronograma, &oacute;leos finalizadores e cosm&eacute;ticos para cabelos.')">
             <div class="photo-card-inner">
-              <img src="assets/joyce-pink-lifestyle.jpg" alt="Joyce Barcelos - Hair Care e Vestido Rosa" loading="lazy" class="gallery-img" />
+              <img src="assets/foto-cabelo.jpg" alt="Joyce Barcelos - Cuidados com o Cabelo e Mechas" loading="lazy" class="gallery-img" />
               <div class="photo-card-overlay">
-                <span class="photo-badge hair"><i class="fa-solid fa-gem"></i> Hair &amp; Lifestyle</span>
+                <span class="photo-badge hair"><i class="fa-solid fa-gem"></i> Hair Care &amp; Mechas</span>
                 <div class="photo-card-info">
-                  <h3>Hair &amp; Estética Romântica</h3>
-                  <p>Harmonia delicada em rosa realçando brilho e saúde dos fios</p>
+                  <h3>Cuidados com o Cabelo &amp; Mechas</h3>
+                  <p>Sa&uacute;de dos fios, brilho sedoso e realce de mechas loiras</p>
                   <span class="photo-zoom-hint"><i class="fa-solid fa-expand"></i> Ver em tela cheia</span>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- Foto 4: Lifestyle Noturno & Experiências -->
-          <div class="photo-card" onclick="openPhotoModal('assets/joyce-lifestyle-blue.jpg', 'Lifestyle Noturno &amp; Experiências', 'Lifestyle • Noite &amp; Gastronomia', 'Cenário aconchegante em ambiente de restaurante com iluminação acolhedora e look elegante. Demonstra versatilidade para marcas de gastronomia, drinks, moda noite, bolsas, cintos e acessórios sofisticados para o dia a dia.')">
+          <!-- Foto 4: Maquiagem & Cosm&eacute;ticos -->
+          <div class="photo-card" onclick="openPhotoModal('assets/foto-gloss.jpg', 'Maquiagem &amp; Cosm&eacute;ticos', 'Beleza &bull; Maquiagem &amp; Gloss', 'Produ&ccedil;&atilde;o envolvente aplicando gloss labial em frente ao espelho com ilumina&ccedil;&atilde;o marcante. Perfeito para marcas de maquiagem, batons, cosm&eacute;ticos labiais, skincare e beleza aut&ecirc;ntica.')">
             <div class="photo-card-inner">
-              <img src="assets/joyce-lifestyle-blue.jpg" alt="Joyce Barcelos - Lifestyle Noturno e Experiências" loading="lazy" class="gallery-img" />
+              <img src="assets/foto-gloss.jpg" alt="Joyce Barcelos - Maquiagem e Cosm&eacute;ticos" loading="lazy" class="gallery-img" />
               <div class="photo-card-overlay">
-                <span class="photo-badge lifestyle"><i class="fa-solid fa-mug-saucer"></i> Lifestyle &amp; Noite</span>
+                <span class="photo-badge beleza"><i class="fa-solid fa-wand-magic-sparkles"></i> Maquiagem &amp; Beleza</span>
                 <div class="photo-card-info">
-                  <h3>Experiências &amp; Gastronomia</h3>
-                  <p>Elegância casual em ambiente noturno acolhedor</p>
+                  <h3>Maquiagem &amp; Cosm&eacute;ticos</h3>
+                  <p>Aplica&ccedil;&atilde;o real de gloss com foco em textura e cosm&eacute;ticos</p>
                   <span class="photo-zoom-hint"><i class="fa-solid fa-expand"></i> Ver em tela cheia</span>
                 </div>
               </div>

@@ -2688,3 +2688,20 @@ button {
     overflow-x: visible !important;
   }
 }
+
+
+/* Layout adaptado para 5 vídeos no portfólio (#portfolio) */
+@media (min-width: 1100px) {
+  .video-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 18px !important;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1099px) {
+  .video-card--phone:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
