@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Joyce Barcelos | UGC Creator - Lifestyle, Beleza, Hair &amp; Fitness</title>
   <meta name="description" content="Crio conteúdos autênticos que aproximam marcas de pessoas, unindo lifestyle, beleza, cuidados capilares e fitness. Joyce Barcelos • Campinas – SP." />
-  <meta name="theme-color" content="#FCFAF9" />
+  <meta name="theme-color" content="#FDFBF7" />
 
   <!-- Open Graph / Meta Compartilhamento -->
   <meta property="og:title" content="Joyce Barcelos | UGC Creator" />
   <meta property="og:description" content="Crio conteúdos autênticos que aproximam marcas de pessoas, unindo lifestyle, beleza, cuidados capilares e fitness." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="perfil.jpg" />
+  <meta property="og:image" content="assets/IMG_7712.PNG" />
 
   <!-- Google Fonts: Plus Jakarta Sans / Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -27,16 +27,40 @@
 <body>
 
   <!-- Top Header / Bar -->
-  <header class="site-header">
+  <header class="site-header" id="header">
     <div class="container header-container">
       <a href="#" class="logo">
         <span class="logo-name">Joyce Barcelos</span>
         <span class="logo-tag">UGC</span>
       </a>
 
-      <div class="availability-badge">
-        <span class="pulse-dot"></span>
-        <span>Vagas abertas para novos projetos</span>
+      <!-- Menu Principal Central -->
+      <nav class="main-nav" id="mainNav" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="#resultados" class="nav-link">Resultados</a></li>
+          <li><a href="#portfolio" class="nav-link">Portf&oacute;lio</a></li>
+          <li><a href="#galeria" class="nav-link">Galeria</a></li>
+          <li><a href="#servicos" class="nav-link">Servi&ccedil;os</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- A&ccedil;&otilde;es do Cabe&ccedil;alho: WhatsApp + Hamb&uacute;rguer -->
+      <div class="header-actions">
+        <a 
+          href="https://wa.me/5519998802981?text=Ol%C3%A1%2C%20Joyce!%20Conheci%20seu%20portf%C3%B3lio%20UGC%20e%20gostaria%20de%20conversar%20sobre%20uma%20poss%C3%ADvel%20parceria." 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn btn-primary header-wa-btn"
+          aria-label="Chamar no WhatsApp"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="header-wa-text">WhatsApp</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
@@ -50,39 +74,47 @@
         <div class="hero-avatar-wrapper">
           <div class="avatar-ring">
             <img 
-              src="perfil.jpg" 
+              src="assets/joyce-denim-portrait.jpg" 
               alt="Joyce Barcelos - UGC Creator" 
               class="hero-avatar"
-              onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'"
             />
           </div>
-          <span class="hero-badge">
-            <i class="fa-solid fa-sparkles"></i> UGC Creator
-          </span>
-        </div>
-
-        <!-- Location & Age Identity -->
-        <div class="hero-location-badge">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Campinas – SP</span>
-          <span class="dot-sep">•</span>
-          <span>27 anos</span>
         </div>
 
         <!-- Typography & Bio -->
         <div class="hero-text-content">
+          
+          <div class="hero-eyebrow-container">
+            <p class="hero-greeting">Olá, eu sou a Joyce!</p>
+            <div class="hero-location-badge">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Campinas – SP</span>
+            </div>
+          </div>
+
           <h1 class="hero-title">
-            Joyce Barcelos <span class="divider">|</span> <span class="highlight">UGC Creator</span>
+            Conteúdo <span class="highlight-accent">autêntico</span> que aproxima sua marca de quem compra
           </h1>
 
           <p class="hero-subtitle">
-            “Crio conteúdos autênticos que aproximam marcas de pessoas, unindo <strong>lifestyle</strong>, <strong>beleza</strong>, <strong>cuidados capilares</strong> e <strong>fitness</strong>.”
+            Sou criadora de conteúdo, apaixonada por beleza, moda, lifestyle e autoestima. Meu conteúdo é autêntico, feito com carinho, mostrando o que realmente funciona no meu dia a dia.
           </p>
+          <p class="hero-signature">Aqui, cada conteúdo é feito com propósito!</p>
 
-          <div class="hero-tags">
-            <span class="tag"><i class="fa-solid fa-person-running"></i> Corrida &amp; Musculação</span>
-            <span class="tag"><i class="fa-solid fa-sparkles"></i> Beleza &amp; Hair Care</span>
-            <span class="tag"><i class="fa-solid fa-mug-saucer"></i> Lifestyle &amp; Rotina Real</span>
+          <!-- Prova Social (3 mini-cards) -->
+          <div class="hero-proof-cards">
+            <div class="proof-card">
+              <span class="proof-number">44,8 mil</span>
+              <span class="proof-label">visualizações em 30 dias</span>
+            </div>
+            <div class="proof-card">
+              <span class="proof-number">59%</span>
+              <span class="proof-label">do público tem 25–34 anos</span>
+            </div>
+            <div class="proof-card">
+              <span class="proof-number">56%</span>
+              <span class="proof-label">do público é feminino</span>
+            </div>
           </div>
 
           <!-- Hero CTA Actions -->
@@ -91,23 +123,19 @@
               href="https://wa.me/5519998802981?text=Ol%C3%A1%2C%20Joyce!%20Conheci%20seu%20portf%C3%B3lio%20UGC%20e%20gostaria%20de%20conversar%20sobre%20uma%20poss%C3%ADvel%20parceria." 
               target="_blank" 
               rel="noopener noreferrer" 
-              class="btn btn-primary"
+              class="btn btn-primary hero-btn-main"
               id="hero-cta"
             >
               <i class="fa-brands fa-whatsapp"></i>
               <span>Trabalhe Comigo</span>
             </a>
 
-            <a href="#portfolio" class="btn btn-secondary">
+            <a href="#portfolio" class="btn btn-outline hero-btn-sub">
               <i class="fa-solid fa-play"></i>
-              <span>Ver Vídeos</span>
-            </a>
-
-            <a href="#galeria" class="btn btn-soft">
-              <i class="fa-regular fa-image"></i>
-              <span>Ver Fotos</span>
+              <span>Ver Portfólio</span>
             </a>
           </div>
+
         </div>
 
       </div>
@@ -119,240 +147,58 @@
         
         <div class="section-header-center">
           <div class="section-badge">
-            <i class="fa-brands fa-instagram"></i> Insights Oficiais
+            <i class="fa-brands fa-instagram"></i> Dados do perfil
           </div>
           <h2 class="section-title">Resultados do Instagram</h2>
           <p class="section-description">
-            Dados reais comprovando alcance qualificado, engajamento orgânico contínuo e conexão genuína com a comunidade.
+            Dados reais do Instagram: alcance, crescimento orgânico e um público majoritariamente feminino.
           </p>
-          <div class="insights-period-tag">
-            <i class="fa-regular fa-calendar-check"></i>
-            <span>Período analisado: <strong>28/09/2026 a 27/10/2026</strong></span>
-          </div>
         </div>
 
-        <!-- 1. Três Métricas Principais (Cards Elegantes) -->
+        <!-- Três Métricas Principais -->
         <div class="main-metrics-grid">
           
+          <!-- Card 1: Visualizações -->
           <div class="insight-main-card">
             <div class="card-icon-bubble">
               <i class="fa-solid fa-eye"></i>
             </div>
             <div class="card-content">
               <span class="card-value">44,8 mil</span>
-              <h3 class="card-label">Visualizações no Período</h3>
-              <p class="card-subtext">Impressões e alcance orgânico acumulados no perfil.</p>
+              <h3 class="card-label">Visualizações</h3>
+              <p class="card-subtext">Nos últimos 30 dias.</p>
             </div>
           </div>
 
+          <!-- Card 2: Novos Seguidores -->
           <div class="insight-main-card">
             <div class="card-icon-bubble">
               <i class="fa-solid fa-user-plus"></i>
             </div>
             <div class="card-content">
-              <span class="card-value">+138</span>
+              <span class="card-value">138</span>
               <h3 class="card-label">Novos Seguidores</h3>
-              <p class="card-subtext">Crescimento constante de audiência interessada em Lifestyle e Moda.</p>
+              <p class="card-subtext">Crescimento orgânico no período.</p>
             </div>
           </div>
 
+          <!-- Card 3: Alcance Fora da Base -->
           <div class="insight-main-card">
             <div class="card-icon-bubble">
-              <i class="fa-solid fa-paper-plane"></i>
+              <i class="fa-solid fa-globe"></i>
             </div>
             <div class="card-content">
-              <span class="card-value">149</span>
-              <h3 class="card-label">Conteúdos Compartilhados</h3>
-              <p class="card-subtext">Usuários recomendando posts espontaneamente por direct/stories.</p>
+              <span class="card-value">17%</span>
+              <h3 class="card-label">Alcance Fora da Base</h3>
+              <p class="card-subtext">Visualizações vindas de não seguidores.</p>
             </div>
           </div>
 
         </div>
 
-        <!-- 2. Desempenho Semanal (Área Compacta e Organizada) -->
-        <div class="weekly-performance-card">
-          <div class="weekly-header">
-            <div>
-              <span class="weekly-badge"><i class="fa-solid fa-chart-simple"></i> Desempenho Semanal</span>
-              <h3>Semana Analisada em Detalhes</h3>
-            </div>
-            <div class="weekly-total-views">
-              <span class="total-number">10 mil</span>
-              <span class="total-label">visualizações na semana</span>
-            </div>
-          </div>
-
-          <div class="weekly-stats-row">
-            
-            <div class="weekly-stat-box">
-              <div class="stat-growth-tag tag-green">
-                <i class="fa-solid fa-arrow-trend-up"></i> +2%
-              </div>
-              <h4>Aumento Semanal Comparativo</h4>
-              <p>Crescimento nas visualizações em relação à semana anterior.</p>
-            </div>
-
-            <div class="weekly-stat-box">
-              <div class="stat-growth-tag tag-blue">
-                <i class="fa-solid fa-arrow-trend-up"></i> +3%
-              </div>
-              <h4>Crescimento Consolidado</h4>
-              <p>Índice positivo registrado no relatório semanal de visualizações.</p>
-            </div>
-
-            <div class="weekly-stat-box">
-              <div class="stat-growth-tag tag-purple">
-                <i class="fa-solid fa-bullseye"></i> 17%
-              </div>
-              <h4>Público Não Seguidor</h4>
-              <p>Alcance qualificado de novas pessoas, ideal para atração de novas marcas.</p>
-            </div>
-
-          </div>
-
-          <!-- Conteúdos Publicados na Semana -->
-          <div class="weekly-posts-strip">
-            <span class="strip-label"><i class="fa-solid fa-clapperboard"></i> Conteúdos publicados na semana:</span>
-            <div class="posts-badges">
-              <span class="post-pill"><i class="fa-solid fa-play"></i> <strong>2</strong> Reels</span>
-              <span class="post-pill"><i class="fa-regular fa-image"></i> <strong>2</strong> Posts</span>
-              <span class="post-pill"><i class="fa-solid fa-circle-dot"></i> <strong>28</strong> Stories</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Perfil do Público (Gênero & Faixa Etária) -->
-        <div class="audience-demographics-grid">
-          
-          <!-- Distribuição por Gênero -->
-          <div class="demographic-card gender-card">
-            <div class="card-subhead">
-              <i class="fa-solid fa-venus-mars"></i>
-              <h4>Distribuição por Gênero</h4>
-            </div>
-
-            <div class="gender-split-visual">
-              <div class="gender-bar">
-                <div class="gender-fill female" style="width: 56.1%;" title="Mulheres: 56,1%"></div>
-                <div class="gender-fill male" style="width: 43.9%;" title="Homens: 43,9%"></div>
-              </div>
-
-              <div class="gender-labels">
-                <div class="gender-item">
-                  <span class="gender-bullet female-bullet"></span>
-                  <div class="gender-data">
-                    <span class="gender-pct">56,1%</span>
-                    <span class="gender-name">Mulheres</span>
-                  </div>
-                </div>
-                <div class="gender-item">
-                  <span class="gender-bullet male-bullet"></span>
-                  <div class="gender-data">
-                    <span class="gender-pct">43,9%</span>
-                    <span class="gender-name">Homens</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="audience-insight-callout">
-              <i class="fa-solid fa-lightbulb"></i>
-              <p>Equilíbrio ideal para marcas de Moda, Cuidados Pessoais e Produtos para o Dia a Dia.</p>
-            </div>
-          </div>
-
-          <!-- Distribuição por Faixa Etária -->
-          <div class="demographic-card age-card">
-            <div class="card-subhead">
-              <i class="fa-solid fa-chart-column"></i>
-              <h4>Faixa Etária do Público</h4>
-            </div>
-
-            <div class="age-bars-container">
-              
-              <!-- 13-17 -->
-              <div class="age-row">
-                <div class="age-meta">
-                  <span class="age-range">13–17 anos</span>
-                  <span class="age-value">0,5%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-percent="0.5" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- 18-24 -->
-              <div class="age-row">
-                <div class="age-meta">
-                  <span class="age-range">18–24 anos</span>
-                  <span class="age-value">10,1%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-percent="10.1" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- 25-34 DESTAQUE ABSOLUTO -->
-              <div class="age-row highlight-age-row">
-                <div class="age-highlight-badge">
-                  <i class="fa-solid fa-crown"></i> 59% da audiência • Público com alto poder de compra
-                </div>
-                <div class="age-meta">
-                  <span class="age-range font-bold">25–34 anos</span>
-                  <span class="age-value font-bold highlight-num">59%</span>
-                </div>
-                <div class="bar-track highlight-track">
-                  <div class="bar-fill highlight-fill" data-percent="59" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- 35-44 -->
-              <div class="age-row">
-                <div class="age-meta">
-                  <span class="age-range">35–44 anos</span>
-                  <span class="age-value">18,4%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-percent="18.4" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- 45-54 -->
-              <div class="age-row">
-                <div class="age-meta">
-                  <span class="age-range">45–54 anos</span>
-                  <span class="age-value">8%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-percent="8" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- 55-64 -->
-              <div class="age-row">
-                <div class="age-meta">
-                  <span class="age-range">55–64 anos</span>
-                  <span class="age-value">3,2%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-percent="3.2" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- 65+ -->
-              <div class="age-row">
-                <div class="age-meta">
-                  <span class="age-range">65 anos ou mais</span>
-                  <span class="age-value">0,9%</span>
-                </div>
-                <div class="bar-track">
-                  <div class="bar-fill" data-percent="0.9" style="width: 0%;"></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
+        <!-- Rodapé da Seção -->
+        <div class="insights-source-note">
+          <span>Fonte: Instagram Insights &bull; 28/09/2026 a 27/10/2026</span>
         </div>
 
       </div>
@@ -368,201 +214,82 @@
             Exemplos de vídeos produzidos com ganchos estratégicos, ritmo dinâmico e chamadas para ação assertivas.
           </p>
 
-          <!-- Filter Pills (4 Categorias) -->
+          <!-- Filter Pills -->
           <div class="portfolio-filters">
             <button class="filter-btn active" data-filter="all">Todos</button>
             <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
-            <button class="filter-btn" data-filter="beleza">Beleza</button>
             <button class="filter-btn" data-filter="hair">Hair</button>
             <button class="filter-btn" data-filter="fitness">Fitness</button>
           </div>
         </div>
 
-        <!-- Video Cards Grid -->
+        <!-- Video Cards Grid (4 V&iacute;deos Oficiais) -->
         <div class="video-grid">
 
-          <!-- Card 1 - Beleza -->
-          <div class="video-card" data-category="beleza">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-denim-portrait.jpg" alt="Vídeo Skincare e Beleza - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-woman-applying-facial-cream-in-a-skincare-routine-41285-large.mp4', 'Beleza & Skincare Matinal')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
+          <!-- Card 1 - Hair -->
+          <div class="video-card video-card--phone" data-category="hair">
+            <span class="video-badge">Hair</span>
+            <div class="phone-mock">
+              <div class="phone-screen">
+                <video class="phone-video" src="assets/videos/hair.mp4" poster="assets/videos/hair-poster.jpg" playsinline preload="metadata" loop></video>
+                <button class="phone-play" aria-label="Reproduzir v&iacute;deo"><i class="fa-solid fa-play"></i></button>
               </div>
-              <span class="video-badge">Beleza</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-sparkles"></i> Skincare &amp; Glow</span>
-                <span class="video-time">0:35</span>
-              </div>
+              <img class="phone-frame" src="assets/iphone-mockup.png" alt="" aria-hidden="true" />
             </div>
             <div class="video-info">
-              <h3>Skincare Matinal &amp; Maquiagem Leve</h3>
-              <p>Autocuidado, textura real de pele na luz natural e rotina de beleza prática para o dia a dia.</p>
+              <h3>Cronograma Capilar</h3>
+              <p>Rotina de cuidados com o cabelo, explicada passo a passo.</p>
             </div>
           </div>
 
-          <!-- Card 2 - Fitness (Corrida) -->
-          <div class="video-card" data-category="fitness">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-corrida-fitness.jpg" alt="Vídeo Corrida ao Ar Livre - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-young-woman-running-on-treadmill-41484-large.mp4', 'Corrida & Rotina Ativa')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
+          <!-- Card 2 - Lifestyle (Look Rosa) -->
+          <div class="video-card video-card--phone" data-category="lifestyle">
+            <span class="video-badge">Lifestyle</span>
+            <div class="phone-mock">
+              <div class="phone-screen">
+                <video class="phone-video" src="assets/videos/lifestyle.mp4" poster="assets/videos/lifestyle-poster.jpg" playsinline preload="metadata" loop></video>
+                <button class="phone-play" aria-label="Reproduzir v&iacute;deo"><i class="fa-solid fa-play"></i></button>
               </div>
-              <span class="video-badge">Fitness</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-person-running"></i> Corrida Real</span>
-                <span class="video-time">0:30</span>
-              </div>
+              <img class="phone-frame" src="assets/iphone-mockup.png" alt="" aria-hidden="true" />
             </div>
             <div class="video-info">
-              <h3>Minha Rotina de Corrida Matinal</h3>
-              <p>Prática real de corrida na rua, destacando conforto de tênis, garrafinha térmica e rotina sem filtros.</p>
+              <h3>Lifestyle &amp; Moda</h3>
+              <p>Look do dia com rotina real e linguagem de Reels.</p>
             </div>
           </div>
 
-          <!-- Card 3 - Hair -->
-          <div class="video-card" data-category="hair">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-pink-lifestyle.jpg" alt="Vídeo Cuidados Capilares - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-fashion-model-in-a-minimalist-setting-42289-large.mp4', 'Hair Care & Tratamento')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
+          <!-- Card 3 - Lifestyle (Transformando a Parede) -->
+          <div class="video-card video-card--phone" data-category="lifestyle">
+            <span class="video-badge">Lifestyle</span>
+            <div class="phone-mock">
+              <div class="phone-screen">
+                <video class="phone-video" src="assets/videos/lifestyle-parede.mp4" poster="assets/videos/lifestyle-parede-poster.jpg" playsinline preload="metadata" loop></video>
+                <button class="phone-play" aria-label="Reproduzir v&iacute;deo"><i class="fa-solid fa-play"></i></button>
               </div>
-              <span class="video-badge">Hair</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-gem"></i> Cronograma Capilar</span>
-                <span class="video-time">0:42</span>
-              </div>
+              <img class="phone-frame" src="assets/iphone-mockup.png" alt="" aria-hidden="true" />
             </div>
             <div class="video-info">
-              <h3>Cronograma Capilar: Hidratação &amp; Brilho</h3>
-              <p>Cuidados capilares na prática, aplicação de máscara nutritiva e resultado com movimento natural dos fios.</p>
+              <h3>Transformando a Parede</h3>
+              <p>Decora&ccedil;&atilde;o e transforma&ccedil;&atilde;o de ambiente no dia a dia.</p>
             </div>
           </div>
 
-          <!-- Card 4 - Lifestyle -->
-          <div class="video-card" data-category="lifestyle">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-lifestyle-blue.jpg" alt="Vídeo Rotina e Experiências - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-woman-making-coffee-at-home-42409-large.mp4', 'Lifestyle & Organização')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
+          <!-- Card 4 - Fitness -->
+          <div class="video-card video-card--phone" data-category="fitness">
+            <span class="video-badge">Fitness</span>
+            <div class="phone-mock">
+              <div class="phone-screen">
+                <video class="phone-video" src="assets/videos/fitness.mp4" poster="assets/videos/fitness-poster.jpg" playsinline preload="metadata" loop></video>
+                <button class="phone-play" aria-label="Reproduzir v&iacute;deo"><i class="fa-solid fa-play"></i></button>
               </div>
-              <span class="video-badge">Lifestyle</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-mug-saucer"></i> Daily Vlog</span>
-                <span class="video-time">0:38</span>
-              </div>
+              <img class="phone-frame" src="assets/iphone-mockup.png" alt="" aria-hidden="true" />
             </div>
             <div class="video-info">
-              <h3>Daily Vlog: Organização &amp; Experiências</h3>
-              <p>Rotina real e experiências cotidianas com inserção espontânea e harmoniosa de produtos de uso pessoal.</p>
+              <h3>Top Comfort Slim</h3>
+              <p>Review de top com foco em conforto e caimento.</p>
             </div>
           </div>
 
-          <!-- Card 5 - Fitness (Musculação) -->
-          <div class="video-card" data-category="fitness">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-corrida-fitness.jpg" alt="Vídeo Treino de Musculação - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-young-woman-stretching-and-exercising-in-the-gym-41312-large.mp4', 'Musculação & Academia')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
-              </div>
-              <span class="video-badge">Fitness</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-dumbbell"></i> Musculação Real</span>
-                <span class="video-time">0:32</span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3>Treino de Musculação na Academia</h3>
-              <p>Rotina ativa de treinos de força, testando sustentação de top, conforto térmico e zero transparência em leggings.</p>
-            </div>
-          </div>
-
-          <!-- Card 6 - Hair -->
-          <div class="video-card" data-category="hair">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-pink-lifestyle.jpg" alt="Vídeo Finalização Capilar - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-hands-holding-and-opening-a-luxury-gift-box-41718-large.mp4', 'Hair Care: Óleo e Protetor Térmico')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
-              </div>
-              <span class="video-badge">Hair</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-droplet"></i> Finalização &amp; Anti-frizz</span>
-                <span class="video-time">0:28</span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3>Finalização: Óleos Reparadores &amp; Antitérmico</h3>
-              <p>Sensorial de toque sedoso, redução visível de frizz e proteção antes do secador para o dia a dia.</p>
-            </div>
-          </div>
-
-          <!-- Card 7 - Beleza -->
-          <div class="video-card" data-category="beleza">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-denim-portrait.jpg" alt="Vídeo Maquiagem Natural - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-woman-applying-facial-cream-in-a-skincare-routine-41285-large.mp4', 'Beleza: Maquiagem Natural')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
-              </div>
-              <span class="video-badge">Beleza</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-wand-magic-sparkles"></i> No-Makeup Look</span>
-                <span class="video-time">0:26</span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3>Maquiagem "No-Makeup" para o Dia a Dia</h3>
-              <p>Aplicação rápida de corretivo, blush cremoso e gloss labial com acabamento fresco e luminoso.</p>
-            </div>
-          </div>
-
-          <!-- Card 8 - Lifestyle -->
-          <div class="video-card" data-category="lifestyle">
-            <div class="video-preview-wrapper">
-              <img src="assets/joyce-lifestyle-blue.jpg" alt="Vídeo Lifestyle e Cotidiano - Joyce Barcelos" class="video-poster" />
-              <div class="video-overlay">
-                <button class="play-btn" aria-label="Reproduzir vídeo" onclick="openVideoModal('https://assets.mixkit.co/videos/preview/mixkit-hands-holding-and-opening-a-luxury-gift-box-41718-large.mp4', 'Lifestyle & Unboxing')">
-                  <i class="fa-solid fa-play"></i>
-                </button>
-              </div>
-              <span class="video-badge">Lifestyle</span>
-              <div class="video-meta">
-                <span class="video-format"><i class="fa-solid fa-box-open"></i> Unboxing &amp; Estilo</span>
-                <span class="video-time">0:31</span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h3>Unboxing &amp; Novidades do Cotidiano</h3>
-              <p>Experiência de abertura de pacotes, primeiras impressões sinceras e dicas de estilo de vida autêntico.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Portfolio CTA -->
-        <div class="portfolio-action-box">
-          <p>Deseja ver mais exemplos ou métricas detalhadas de campanhas anteriores?</p>
-          <a 
-            href="https://wa.me/5519998802981?text=Ol%C3%A1%2C%20Joyce!%20Conheci%20seu%20portf%C3%B3lio%20UGC%20e%20gostaria%20de%20conversar%20sobre%20uma%20poss%C3%ADvel%20parceria." 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="btn btn-outline"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>Conversar pelo WhatsApp</span>
-          </a>
         </div>
       </div>
     </section>
@@ -602,7 +329,7 @@
             <div class="photo-card-inner">
               <img src="assets/joyce-denim-portrait.jpg" alt="Joyce Barcelos - Retrato Beleza e Glow" loading="lazy" class="gallery-img" />
               <div class="photo-card-overlay">
-                <span class="photo-badge beleza"><i class="fa-solid fa-sparkles"></i> Beleza &amp; Glow</span>
+                <span class="photo-badge beleza"><i class="fa-solid fa-wand-magic-sparkles"></i> Beleza &amp; Glow</span>
                 <div class="photo-card-info">
                   <h3>Retrato &amp; Beleza Natural</h3>
                   <p>Textura real na luz do dia com estética leve e fresca</p>
@@ -644,36 +371,12 @@
 
         </div>
 
-        <!-- Pacotes Fotográficos Callout -->
-        <div class="gallery-callout-card">
-          <div class="callout-content">
-            <div class="callout-pill">
-              <i class="fa-solid fa-camera-retro"></i>
-              <span>Pacotes Fotográficos UGC</span>
-            </div>
-            <h3>Fotografia autêntica pronta para anúncios e catálogos</h3>
-            <p>
-              Além de vídeos dinâmicos, entrego pacotes com fotos tratadas em alta definição nos formatos 4:5 (feed) e 9:16 (stories), prontas para tráfego pago, criativos de carrossel e e-commerce da sua marca.
-            </p>
-          </div>
-          <div class="callout-action">
-            <a 
-              href="https://wa.me/5519998802981?text=Ol%C3%A1%2C%20Joyce!%20Conheci%20seu%20portf%C3%B3lio%20UGC%20e%20gostaria%20de%20conversar%20sobre%20uma%20poss%C3%ADvel%20parceria%20e%20pacotes%20de%20fotos." 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="btn btn-primary"
-            >
-              <i class="fa-brands fa-whatsapp"></i>
-              <span>Trabalhe Comigo • Pacotes de Fotos</span>
-            </a>
-          </div>
-        </div>
 
       </div>
     </section>
 
     <!-- FORMATS / SERVICES OFFERED -->
-    <section class="formats-section">
+    <section class="formats-section" id="servicos">
       <div class="container">
         <div class="section-badge">Formatos Disponíveis</div>
         <h2 class="section-title">O que posso produzir para a sua marca</h2>
@@ -683,91 +386,140 @@
 
         <div class="formats-grid">
           
+          <!-- 01: Depoimento & Review Honesto -->
           <div class="format-card">
             <div class="format-header">
-              <span class="format-number">01</span>
-              <span class="format-tag">Alta Conversão</span>
+              <div class="format-icon">
+                <i class="fa-solid fa-comment-dots"></i>
+              </div>
+              <span class="format-tag">Review</span>
             </div>
-            <h3>Depoimento & Review Honesto</h3>
-            <p>Relato sincero com foco em dores reais do seu público, quebra de objeções e por que o seu produto é a solução ideal.</p>
+            <h3>Depoimento &amp; Review Honesto</h3>
+            <p>Relato sincero sobre o produto, mostrando na prática como ele resolve.</p>
             <ul class="format-features">
-              <li><i class="fa-solid fa-check"></i> Roteiro persuasivo validado</li>
-              <li><i class="fa-solid fa-check"></i> Gancho nos primeiros 3 segundos</li>
-              <li><i class="fa-solid fa-check"></i> CTA clara para compra</li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Roteiro aprovado por você antes de gravar</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Gancho forte no início do vídeo</span>
+              </li>
             </ul>
           </div>
 
+          <!-- 02: Unboxing Sensorial (ASMR) -->
           <div class="format-card">
             <div class="format-header">
-              <span class="format-number">02</span>
-              <span class="format-tag">Mais Pedido</span>
+              <div class="format-icon">
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+              <span class="format-tag">Unboxing</span>
             </div>
             <h3>Unboxing Sensorial (ASMR)</h3>
-            <p>Experiência de abertura da embalagem com sons nítidos, close-ups nos detalhes e primeira impressão espontânea.</p>
+            <p>Abertura da embalagem com sons nítidos, detalhes e primeira impressão real.</p>
             <ul class="format-features">
-              <li><i class="fa-solid fa-check"></i> Iluminação natural de alta definição</li>
-              <li><i class="fa-solid fa-check"></i> Valorização do packaging</li>
-              <li><i class="fa-solid fa-check"></i> Sensação de exclusividade</li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Close-ups e áudio de qualidade</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Embalagem em destaque</span>
+              </li>
             </ul>
           </div>
 
+          <!-- 03: GRWM & Trends -->
           <div class="format-card">
             <div class="format-header">
-              <span class="format-number">03</span>
-              <span class="format-tag">Viralidade</span>
+              <div class="format-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <span class="format-tag">Trend</span>
             </div>
-            <h3>Get Ready With Me (GRWM) & Trends</h3>
-            <p>Inserção dinâmica do produto no contexto de um arrume-se comigo, treino ou rotina diária com áudio em alta.</p>
+            <h3>GRWM &amp; Trends</h3>
+            <p>O produto dentro de uma rotina, treino ou trend com áudio em alta.</p>
             <ul class="format-features">
-              <li><i class="fa-solid fa-check"></i> Edição rítmica e moderna</li>
-              <li><i class="fa-solid fa-check"></i> Alto tempo de retenção</li>
-              <li><i class="fa-solid fa-check"></i> Linguagem nativa do TikTok/Reels</li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Edição dinâmica</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Linguagem de Reels e TikTok</span>
+              </li>
             </ul>
           </div>
 
+          <!-- 04: Demonstração & "Como Usar" -->
           <div class="format-card">
             <div class="format-header">
-              <span class="format-number">04</span>
-              <span class="format-tag">Educativo</span>
+              <div class="format-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <span class="format-tag">Tutorial</span>
             </div>
-            <h3>Demonstração & "Como Usar"</h3>
-            <p>Tutorial passo a passo ensinando o modo de uso correto, destacando diferenciais e resultados práticos.</p>
+            <h3>Demonstração &amp; "Como Usar"</h3>
+            <p>Passo a passo mostrando o modo de uso e os diferenciais.</p>
             <ul class="format-features">
-              <li><i class="fa-solid fa-check"></i> Legendas dinâmicas inclusas</li>
-              <li><i class="fa-solid fa-check"></i> Efeitos visuais e zoom de ênfase</li>
-              <li><i class="fa-solid fa-check"></i> Excelente para produtos inovadores</li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Legendas inclusas</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Zoom nos detalhes importantes</span>
+              </li>
             </ul>
           </div>
 
+          <!-- 05: Problema x Solução -->
           <div class="format-card">
             <div class="format-header">
-              <span class="format-number">05</span>
-              <span class="format-tag">Antes & Depois</span>
+              <div class="format-icon">
+                <i class="fa-solid fa-right-left"></i>
+              </div>
+              <span class="format-tag">Contraste</span>
             </div>
             <h3>Problema x Solução</h3>
-            <p>Contraste imediato entre a dor que o consumidor enfrenta e a transformação imediata proporcionada pela sua marca.</p>
+            <p>Contraste claro entre o problema do dia a dia e a solução do produto.</p>
             <ul class="format-features">
-              <li><i class="fa-solid fa-check"></i> Apelo visual impactante</li>
-              <li><i class="fa-solid fa-check"></i> Ideal para beleza e fitness</li>
-              <li><i class="fa-solid fa-check"></i> Retenção superior a 70%</li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Visual de impacto</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Ideal para beleza e fitness</span>
+              </li>
             </ul>
           </div>
 
+          <!-- 06: Fotos Lifestyle -->
           <div class="format-card">
             <div class="format-header">
-              <span class="format-number">06</span>
+              <div class="format-icon">
+                <i class="fa-solid fa-camera"></i>
+              </div>
               <span class="format-tag">Fotografia</span>
             </div>
-            <h3>Fotos Lifestyle de Alta Resolução</h3>
-            <p>Pacotes de fotos de produto em uso real para carrosséis de anúncio, e-commerce e feed do Instagram.</p>
+            <h3>Fotos Lifestyle</h3>
+            <p>Fotos do produto em uso real para anúncios, e-commerce e feed.</p>
             <ul class="format-features">
-              <li><i class="fa-solid fa-check"></i> Fotos tratadas e em alta definição</li>
-              <li><i class="fa-solid fa-check"></i> Ângulos comerciais estratégicos</li>
-              <li><i class="fa-solid fa-check"></i> Formatos feed (4:5) e story (9:16)</li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Fotos tratadas</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i>
+                <span>Formatos feed (4:5) e story (9:16)</span>
+              </li>
             </ul>
           </div>
 
         </div>
+
       </div>
     </section>
 
@@ -850,169 +602,94 @@
           </div>
 
         </div>
-
-        <div class="sla-card">
-          <i class="fa-regular fa-clock"></i>
-          <div>
-            <strong>Prazo Médio de Entrega:</strong>
-            <span>3 a 5 dias úteis após a chegada do produto.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ SECTION (ACCORDION) -->
-    <section class="faq-section">
-      <div class="container">
-        <div class="section-badge">Dúvidas Frequentes</div>
-        <h2 class="section-title">Perguntas Comuns</h2>
-        <p class="section-description">
-          Tudo o que você precisa saber antes de iniciarmos nossa campanha.
-        </p>
-
-        <div class="faq-accordion">
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Qual o prazo de entrega dos vídeos?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>O prazo padrão é de 3 a 5 dias úteis a contar a partir da data de recebimento do produto no meu endereço. Caso precise de entrega expressa (em até 48h), temos a opção com taxa de urgência sob consulta.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Como funcionam os direitos de uso de imagem?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Os pacotes incluem direitos de uso de imagem para tráfego pago (Dark Posts / Ads) e publicação orgânica nos canais oficiais da marca por períodos de 3, 6 ou 12 meses, conforme contratado na proposta comercial.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Tenho direito a alterações no vídeo?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Sim! Cada projeto inclui até 1 rodada de ajustes gratuitos na edição (troca de trilha, ajuste de corte ou alteração de legendas), desde que estejam dentro do roteiro previamente aprovado.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Você mesma cria os roteiros ou preciso enviar prontos?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Fica a critério da sua equipe! Posso desenvolver os roteiros do zero com foco em retenção e ganchos persuasivos, ou gravar seguindo as orientações e diretrizes pré-definidas pelo seu time de tráfego.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Quais equipamentos você utiliza para gravar?</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-            <div class="faq-answer">
-              <p>Gravo em iPhone de última geração com resolução 4K a 60fps, iluminação profissional com softbox e ring light, e microfone sem fio de alta fidelidade para garantir áudio nítido e sem ruídos.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA CARD -->
-    <section class="final-cta-section">
-      <div class="container">
-        <div class="final-cta-card">
-          <div class="final-cta-badge">Vamos Trabalhar Juntos?</div>
-          <h2>Pronta para escalar as vendas da sua marca com UGC autêntico</h2>
-          <p>
-            Clique no botão abaixo para conversar comigo diretamente no WhatsApp. Envie o perfil da sua marca e seus objetivos para receber uma proposta personalizada.
-          </p>
-          <a 
-            href="https://wa.me/5519998802981?text=Ol%C3%A1%2C%20Joyce!%20Conheci%20seu%20portf%C3%B3lio%20UGC%20e%20gostaria%20de%20conversar%20sobre%20uma%20poss%C3%ADvel%20parceria." 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="btn btn-primary btn-large"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>Trabalhe Comigo no WhatsApp</span>
-          </a>
-          <span class="final-cta-note">Sem burocracia • Atendimento direto: (19) 99880-2981</span>
-        </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <span class="footer-logo">Joyce Barcelos</span>
-        <p class="footer-tagline">UGC Creator • Lifestyle, Beleza, Hair &amp; Fitness • Campinas – SP</p>
-      </div>
+  <!-- SEÇÃO FINAL & RODAPÉ (CONTATO) -->
+  <footer class="site-footer final-section" id="contato">
+    <div class="container final-container">
+      
+      <!-- Cartão Principal com Gradiente -->
+      <div class="final-card">
+        
+        <!-- Coluna da Foto -->
+        <div class="final-photo-wrapper">
+          <img 
+            src="assets/IMG_7685.PNG" 
+            alt="Joyce Barcelos, UGC Creator" 
+            class="final-photo"
+          />
+        </div>
 
-      <!-- Contato: WhatsApp e E-mail -->
-      <div class="footer-contact">
-        <span class="footer-label">Canais diretos para parcerias:</span>
-        <div class="footer-contact-group">
-          <a href="https://wa.me/5519998802981?text=Ol%C3%A1%2C%20Joyce!%20Conheci%20seu%20portf%C3%B3lio%20UGC%20e%20gostaria%20de%20conversar%20sobre%20uma%20poss%C3%ADvel%20parceria." target="_blank" rel="noopener noreferrer" class="footer-email-card" title="Conversar no WhatsApp: (19) 99880-2981">
-            <div class="email-icon whatsapp-icon">
+        <!-- Coluna de Conteúdo -->
+        <div class="final-content">
+          <h2 class="final-title">
+            Vamos trabalhar juntos?
+          </h2>
+
+          <p class="final-subtitle">
+            Sua marca pronta para vender com conteúdo autêntico
+          </p>
+
+          <!-- Botão Principal -->
+          <div class="final-main-action">
+            <a 
+              href="https://wa.me/5519998802981?text=Ol%C3%A1%2C%20Joyce!%20Conheci%20seu%20portf%C3%B3lio%20UGC%20e%20gostaria%20de%20conversar%20sobre%20uma%20poss%C3%ADvel%20parceria." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn final-btn-whatsapp"
+            >
               <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <span class="email-address">(19) 99880-2981</span>
-            <i class="fa-solid fa-arrow-up-right-from-square email-external"></i>
-          </a>
+              <span>Chamar no WhatsApp</span>
+            </a>
+          </div>
 
-          <a href="mailto:joycebarcelos31@gmail.com" class="footer-email-card" title="Clique para enviar um e-mail para joycebarcelos31@gmail.com">
-            <div class="email-icon">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <span class="email-address">joycebarcelos31@gmail.com</span>
-            <i class="fa-solid fa-arrow-up-right-from-square email-external"></i>
-          </a>
+          <!-- Botão Translúcido de E-mail -->
+          <div class="final-quick-contacts">
+            <a 
+              href="mailto:joycebarcelos31@gmail.com" 
+              class="final-contact-pill"
+              title="Enviar e-mail para joycebarcelos31@gmail.com"
+            >
+              <i class="fa-regular fa-envelope"></i>
+              <span>joycebarcelos31@gmail.com</span>
+            </a>
+          </div>
+
+          <!-- Redes Sociais (Instagram & TikTok) -->
+          <div class="final-social-links">
+            <a 
+              href="https://instagram.com/joycebarcel" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="final-social-pill"
+              aria-label="Instagram Joyce Barcelos"
+            >
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+
+            <a 
+              href="https://www.tiktok.com/@joycebarcelos07?_r=1&amp;_t=ZS-9AxzdoTaLXJ" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="final-social-pill"
+              aria-label="TikTok @joycebarcelos07"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+              <span>TikTok</span>
+            </a>
+          </div>
+
         </div>
       </div>
 
-      <!-- Ícones Redes Sociais (Instagram e TikTok) -->
-      <div class="footer-social-group">
-        <span class="footer-label">Acompanhe meu conteúdo:</span>
-        <div class="footer-social-links">
-          <a 
-            href="https://instagram.com/joycebarcel" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="social-pill instagram"
-            aria-label="Instagram Joyce Barcelos"
-          >
-            <i class="fa-brands fa-instagram"></i>
-            <span class="social-text">Instagram</span>
-          </a>
-
-          <a 
-            href="https://www.tiktok.com/@joycebarcelos07?_r=1&amp;_t=ZS-9AxzdoTaLXJ" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="social-pill tiktok"
-            aria-label="TikTok @joycebarcelos07"
-          >
-            <i class="fa-brands fa-tiktok"></i>
-            <span class="social-text">TikTok</span>
-          </a>
-        </div>
+      <!-- Rodapé (fora do cartão) -->
+      <div class="final-copyright">
+        <p>© <span id="current-year"></span> Joyce Barcelos • UGC Creator • Campinas – SP</p>
       </div>
 
-      <div class="footer-divider"></div>
-
-      <div class="footer-copy">
-        <p>© <span id="current-year"></span> Joyce Barcelos. Todos os direitos reservados.</p>
-      </div>
     </div>
   </footer>
 
@@ -1041,7 +718,7 @@
         </button>
       </div>
       <div class="video-modal-body">
-        <video id="modalVideoPlayer" controls playsinline>
+        <video id="modalVideoPlayer" controls playsinline preload="metadata">
           <source src="" type="video/mp4" />
           Seu navegador não suporta a reprodução deste vídeo.
         </video>

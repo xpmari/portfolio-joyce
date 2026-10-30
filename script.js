@@ -13,14 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Filtro do Portfólio (Categorias)
   initPortfolioFilters();
 
-  // 3. Accordion do FAQ
-  initFaqAccordion();
-
-  // 4. Controle do Botão Flutuante do WhatsApp
+  // 3. Controle do Botão Flutuante do WhatsApp
   initFloatingCta();
 
-  // 5. Animação suave das barras de faixa etária
-  initAgeBarsAnimation();
+  // 4. Menu de Navegação e Header Sticky
+  initNavigation();
+
+  // 5. Controle dos Vídeos nas Molduras de iPhone (#portfolio)
+  initPhoneVideos();
 });
 
 /* ==========================================================================
@@ -46,42 +46,13 @@ function initPortfolioFilters() {
           card.style.animation = 'fadeIn 0.35s ease forwards';
         } else {
           card.classList.add('hidden');
+          // Pausa o vídeo se estiver tocando ao esconder o card
+          const video = card.querySelector('.phone-video');
+          if (video && !video.paused) {
+            video.pause();
+          }
         }
       });
-    });
-  });
-}
-
-/* ==========================================================================
-   FAQ ACCORDION
-   ========================================================================== */
-function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
-
-  faqItems.forEach(item => {
-    const questionBtn = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-
-    questionBtn.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-
-      // Fecha outros itens abertos para manter a tela limpa no mobile
-      faqItems.forEach(otherItem => {
-        if (otherItem !== item && otherItem.classList.contains('active')) {
-          otherItem.classList.remove('active');
-          const otherAnswer = otherItem.querySelector('.faq-answer');
-          otherAnswer.style.maxHeight = null;
-        }
-      });
-
-      // Alterna o item clicado
-      if (!isActive) {
-        item.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + 30 + 'px';
-      } else {
-        item.classList.remove('active');
-        answer.style.maxHeight = null;
-      }
     });
   });
 }
@@ -92,14 +63,17 @@ function initFaqAccordion() {
 function initFloatingCta() {
   const floatingCta = document.getElementById('floating-cta');
   const heroCta = document.getElementById('hero-cta');
+  const contatoSection = document.getElementById('contato');
 
   if (!floatingCta || !heroCta) return;
 
-  const handleScroll = () => {
+  let isContatoVisible = false;
+
+  const updateVisibility = () => {
     const heroBottom = heroCta.getBoundingClientRect().bottom;
 
-    // Mostra o botão flutuante apenas após passar do botão principal da Hero
-    if (heroBottom < 0) {
+    // Mostra o botão flutuante apenas após passar da Hero e esconde se #contato estiver visível
+    if (heroBottom < 0 && !isContatoVisible) {
       floatingCta.style.opacity = '1';
       floatingCta.style.pointerEvents = 'auto';
       floatingCta.style.transform = 'translateY(0)';
@@ -110,8 +84,227 @@ function initFloatingCta() {
     }
   };
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Checagem inicial
+  if (contatoSection && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isContatoVisible = entry.isIntersecting;
+        updateVisibility();
+      });
+    }, { threshold: 0.05 });
+    observer.observe(contatoSection);
+  }
+
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+  updateVisibility(); // Checagem inicial
+}
+
+/* ==========================================================================
+   NAVIGATION & HEADER INTERACTIONS
+   ========================================================================== */
+function initNavigation() {
+  const header = document.querySelector('.site-header');
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // 1. Mobile Menu Toggle
+  if (navToggle && mainNav) {
+    const icon = navToggle.querySelector('i');
+
+    const toggleMenu = (open) => {
+      const isOpen = open !== undefined ? open : !mainNav.classList.contains('open');
+      mainNav.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+      if (icon) {
+        if (isOpen) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        } else {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
+    };
+
+    navToggle.addEventListener('click', () => toggleMenu());
+
+    // Fechar ao clicar em qualquer link do menu
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mainNav.classList.contains('open')) {
+          toggleMenu(false);
+        }
+      });
+    });
+
+    // Fechar com tecla ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+        toggleMenu(false);
+      }
+    });
+
+    // Fechar ao clicar fora do header/nav
+    document.addEventListener('click', (e) => {
+      if (mainNav.classList.contains('open') && !header.contains(e.target)) {
+        toggleMenu(false);
+      }
+    });
+  }
+
+  // 2. Header scrolled state (scrollY > 10)
+  if (header) {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  // 3. Active link spy via IntersectionObserver
+  const sections = document.querySelectorAll('#resultados, #portfolio, #galeria, #servicos, #contato');
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(sec => sectionObserver.observe(sec));
+
+    // Fallback: ao chegar ao final da página, destaca #contato
+    window.addEventListener('scroll', () => {
+      if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50)) {
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === '#contato') {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    }, { passive: true });
+  }
+}
+
+/* ==========================================================================
+   PHONE MOCKUP VIDEO CONTROLS (#portfolio)
+   ========================================================================== */
+function initPhoneVideos() {
+  const phoneMocks = document.querySelectorAll('.phone-mock');
+  if (!phoneMocks.length) return;
+
+  const allVideos = [];
+
+  phoneMocks.forEach(mock => {
+    const video = mock.querySelector('.phone-video');
+    const playBtn = mock.querySelector('.phone-play');
+    if (!video) return;
+
+    allVideos.push(video);
+
+    // Eventos de estado do vídeo para atualizar classe .playing
+    video.addEventListener('play', () => {
+      mock.classList.add('playing');
+    });
+
+    video.addEventListener('pause', () => {
+      mock.classList.remove('playing');
+    });
+
+    video.addEventListener('ended', () => {
+      mock.classList.remove('playing');
+    });
+
+    // Se houver erro de carregamento, esconde o botão de play e preserva o poster
+    video.addEventListener('error', () => {
+      mock.classList.remove('playing');
+      if (playBtn) {
+        playBtn.style.display = 'none';
+      }
+    });
+
+    // Função para alternar reprodução
+    const togglePlay = () => {
+      if (video.paused) {
+        // Pausa todos os outros vídeos da página
+        allVideos.forEach(otherVideo => {
+          if (otherVideo !== video && !otherVideo.paused) {
+            otherVideo.pause();
+          }
+        });
+
+        // Inicia reprodução com áudio ativado
+        video.muted = false;
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Se o navegador bloquear unmuted play, faz fallback com muted
+            video.muted = true;
+            video.play().catch(err => {
+              console.warn('Erro ao reproduzir vídeo:', err);
+            });
+          });
+        }
+      } else {
+        video.pause();
+      }
+    };
+
+    // Clique no botão central de play
+    if (playBtn) {
+      playBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        togglePlay();
+      });
+    }
+
+    // Clique direto no vídeo para pausar / despausar
+    video.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlay();
+    });
+  });
+
+  // Pausa automática quando o vídeo sair da tela (< 30% visível)
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target.querySelector('.phone-video');
+        if (!video) return;
+
+        if (!entry.isIntersecting || entry.intersectionRatio < 0.3) {
+          if (!video.paused) {
+            video.pause();
+          }
+        }
+      });
+    }, {
+      threshold: [0, 0.3]
+    });
+
+    phoneMocks.forEach(mock => videoObserver.observe(mock));
+  }
 }
 
 /* ==========================================================================
@@ -128,16 +321,25 @@ function openVideoModal(videoSrc, title) {
     videoModalTitle.textContent = title;
   }
 
-  modalVideoPlayer.src = videoSrc;
-  videoModal.classList.add('active');
-  videoModal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden'; // Impede scroll do body
+  if (videoSrc) {
+    modalVideoPlayer.src = videoSrc;
+    modalVideoPlayer.style.display = 'block';
+    videoModal.classList.add('active');
+    videoModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Impede scroll do body
 
-  modalVideoPlayer.play().catch(() => {
-    // Caso autoplay com áudio seja bloqueado pelo navegador
-    modalVideoPlayer.muted = true;
-    modalVideoPlayer.play();
-  });
+    modalVideoPlayer.play().catch(() => {
+      // Caso autoplay com áudio seja bloqueado pelo navegador
+      modalVideoPlayer.muted = true;
+      modalVideoPlayer.play().catch(() => {});
+    });
+  } else {
+    modalVideoPlayer.removeAttribute('src');
+    modalVideoPlayer.load();
+    videoModal.classList.add('active');
+    videoModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
 }
 
 function closeVideoModal() {
@@ -200,31 +402,3 @@ function closePhotoModal() {
   photoModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = ''; // Restaura rolagem normal
 }
-
-/* ==========================================================================
-   AGE DEMOGRAPHICS BARS ANIMATION
-   ========================================================================== */
-function initAgeBarsAnimation() {
-  const ageBars = document.querySelectorAll('.bar-fill');
-  if (!ageBars.length) return;
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        ageBars.forEach(bar => {
-          const pct = bar.getAttribute('data-percent');
-          if (pct) {
-            bar.style.width = pct + '%';
-          }
-        });
-        obs.disconnect(); // Dispara apenas uma vez para efeito suave
-      }
-    });
-  }, { threshold: 0.2 });
-
-  const container = document.querySelector('.age-bars-container');
-  if (container) {
-    observer.observe(container);
-  }
-}
-
